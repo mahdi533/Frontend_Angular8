@@ -1,0 +1,27 @@
+<br><br><br>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Duree</th>
+          <th>Formateur</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let formation of formations | async">
+          <td>{{formation.nom}}</td>
+          <td>{{formation.duree}}</td>
+          <td>{{formation.formateur.nom}}</td>
+          <td><button (click)="deleteFormation(formation.id)" class="btn btn-danger">supprimer</button>
+               <button (click)="updateFormation(formation.id)" class="btn btn-info" style="margin-left: 10px">modifier</button>
+             <!-- <button (click)="formationDetails(formation.id_formation)" class="btn btn-info" style="margin-left: 10px">Details</button>-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

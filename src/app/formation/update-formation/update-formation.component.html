@@ -1,0 +1,34 @@
+<h3>Update Formation</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input type="text" class="form-control" id="bRA_CORP_NAME" required [(ngModel)]="agence.bRA_CORP_NAME" name="bRA_CORP_NAME">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Adresse</label>
+      <input type="text" class="form-control" id="adresse" required [(ngModel)]="agence.adresse" name="adresse">
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <label for="formateur">Formateur</label>
+        <br>
+        <select  name="formateur" required [(ngModel)]="agence.formateur" >
+          <option *ngFor="let formateur of formateurs" [ngValue]="formateur">
+            {{formateur.ban_name}}
+          </option>
+        </select>
+      </div>
+      <br>
+      <div class="col-md-6">
+            <label for="formateur">Ancienne Formateur</label>
+              <input type="text" id="id" name="id" class="form-control" value="{{agence.formateur.ban_abbrev}}" readonly>
+        </div>
+      </div>
+  <br><br>
+  
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

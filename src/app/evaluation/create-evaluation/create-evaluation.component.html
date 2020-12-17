@@ -1,0 +1,35 @@
+<h3>Ajout Evaluation</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Moyens Pédagogiques</label>
+      <input type="text" class="form-control" id="moyensPedagogique" required [(ngModel)]="evaluation.moyensPedagogique" name="moyensPedagogique">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Support Cours</label>
+      <input type="text" class="form-control" id="supportCours" required [(ngModel)]="evaluation.supportCours" name="supportCours">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Note Formateur</label>
+      <input type="text" class="form-control" id="evalFormateur" required [(ngModel)]="evaluation.evalFormateur" name="evalFormateur">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Extras</label>
+      <input type="text" class="form-control" id="extras" required [(ngModel)]="evaluation.extras" name="extras">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Pedagogé</label>
+      <input type="text" class="form-control" id="pedagogee" required [(ngModel)]="evaluation.pedagogee" name="pedagogee">
+    </div>
+    <button type="submit" class="btn btn-success">Valider</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEntreprise()">Add</button> -->
+</div>

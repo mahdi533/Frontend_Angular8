@@ -1,0 +1,26 @@
+<h3>Ajout Formation</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input type="text" class="form-control" id="nom" required [(ngModel)]="formation.nom" name="nom">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Duree</label>
+      <input type="text" class="form-control" id="duree" required [(ngModel)]="formation.duree" name="duree">
+    </div>
+
+    <br>
+    <label for="formateur">Formateur</label>
+    <br>
+    <select  name="formateur" required [(ngModel)]="formation.formateur" >
+      <option *ngFor="let formateur of formateurs" [ngValue]="formateur">
+        {{formateur.nom}} {{formateur.prenom}}
+      </option>
+    </select>
+<br><br>
+
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</div>

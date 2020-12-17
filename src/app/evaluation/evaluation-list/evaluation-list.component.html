@@ -1,0 +1,29 @@
+<br><br><br>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Moyens Pédagogiques</th>
+          <th>Support Cours</th>
+          <th>Note Formateur</th>
+          <th>Extras</th>
+          <th>Pedagogé</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evaluation of evaluations | async">
+          <td>{{evaluation.moyensPedagogique}}</td>
+          <td>{{evaluation.supportCours}}</td>
+          <td>{{evaluation.evalFormateur}}</td>
+          <td>{{evaluation.extras}}</td>
+          <td>{{evaluation.pedagogee}}</td>
+          <td><button (click)="deleteEvaluation(evaluation.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
